@@ -80,7 +80,7 @@
                     <i class="fa fa-caret-down"></i>
                 </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i>
+                        <li><a href="/MovieManager/logout"><i class="fa fa-sign-out fa-fw"></i>
                             退出登录</a></li>
                     </ul> <!-- /.dropdown-user --></li>
                 <!-- /.dropdown -->
@@ -89,9 +89,9 @@
         <div class="navbar-default sidebar" role="navigation">
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
-                    <li><a href="/movie/list" class="active"><i
+                    <li><a href="/MovieManager/movie/list" class="active"><i
                             class="fa fa-edit fa-fw"></i> 电影管理</a></li>
-                    <li><a href="/user/list"><i
+                    <li><a href="/MovieManager/user/list"><i
                             class="fa fa-edit fa-fw"></i> 用户管理</a></li>
                 <shiro:hasRole name="admin">
                     <li><a href="list.action"><i
