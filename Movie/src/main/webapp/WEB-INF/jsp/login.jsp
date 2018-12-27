@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
     <!-- CSS -->
     <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/Movie/assets/css/regandlogcommon.css">

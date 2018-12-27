@@ -71,7 +71,7 @@
                 <span class="fm-rating">
         <a class="fm-green" value="${sessionScope.TopDefaultMovie[0].movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })' name="movieaverating"  rel="nofollow">Score: ${sessionScope.TopDefaultMovie[0].averating} </a></span></span>

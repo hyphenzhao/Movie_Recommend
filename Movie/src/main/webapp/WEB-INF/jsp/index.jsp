@@ -114,7 +114,7 @@
             <c:if test="${sessionScope.user != null}">
 
                 <a class="dream" id="logout" href="javascript:window.location.href='/Movie/page/logout'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span>  退出</a>
-                <a class="dream" onclick='javascript:$.post("/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
+                <a class="dream" onclick='javascript:$.post("/Movie/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
             if (data=="success") {
                 location.href = "/Movie/profile"
             } else {
@@ -191,7 +191,7 @@
                                 <c:forEach var="item"   items="${sessionScope.movie}">
                                     <a class="item"   target="_blank" name="imgitem" id="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("id")}, function (data) {
                                     if (data == "success") {
-                                        location.href = "/MovieDescription"
+                                        location.href = "/Movie/MovieDescription"
                                     } else {
                                     }
                                     })'>
@@ -259,7 +259,7 @@
                                             <div class="item active">
                                                 <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("alt")}, function (data) {
                                                 if (data=="success") {
-                                                    location.href = "/MovieDescription"
+                                                    location.href = "/Movie/MovieDescription"
                                                 } else {
                                                 }
                                             })' style="width:400px;height: 100%">
@@ -269,7 +269,7 @@
                                             <div class="item">
                                                 <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("alt")}, function (data) {
                                                 if (data=="success") {
-                                                    location.href = "/MovieDescription"
+                                                    location.href = "/Movie/MovieDescription"
                                                 } else {
                                                 }
                                             })' style="width: 500px;height: 100%">

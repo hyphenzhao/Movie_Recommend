@@ -7,8 +7,8 @@
 <head>
     <meta charset="utf-8"/>
     <title data-react-helmet="true">RQEA - Your Personal & Professional Movie Reviewer</title>
-    <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
-    <link data-react-helmet="true" rel="prefetch" href="/assets/img/user_cover_image.jpg"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link data-react-helmet="true" rel="prefetch" href="/Movie/assets/img/user_cover_image.jpg"/>
     <script src="/Movie/assets/js/jquery.js"></script>
     <script src="/Movie/assets/js/bootstrap.min.js"></script>
     <script src="/Movie/assets/js/star-rating.min.js" type="text/javascript"></script>
@@ -41,7 +41,7 @@
     <div data-reactid="5">
         <!-- 导航栏-->
         <nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-            <a class="navbar-brand" href="/" style="color: white">电影推荐网站</a>
+            <a class="navbar-brand" href="/Movie" style="color: white">电影推荐网站</a>
 
             <div class="col-xs-4">
                 <input id="inp-query" class="form-control"

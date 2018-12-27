@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>RQEA - Your Personal & Professional Movie Reviewer</title>
 
-    <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
 
     <!-- 星星评分CSS-->
     <link href="/Movie/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
@@ -47,30 +47,30 @@
 
 <!-- 导航栏-->
 <nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-    <a class="navbar-brand" href="/" style="color: white">RQ<img src="/assets/img/title.gif">EA</a>
+    <a class="navbar-brand" href="/Movie" style="color: white">RQ<img src="/Movie/assets/img/title.gif">EA</a>
 
     <div class="col-xs-4">
         <input id="inp-query" class="form-control"
                style="margin-bottom: 8px;margin-top: 8px;border-radius: 5px;border-color: white" name="search_text"
                maxlength="60" placeholder="搜索电影" value="">
     </div>
-    <a class="navbar-brand" href="/index" style="color: white">选电影</a>
+    <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
     <c:if test="${sessionScope.user == null}">
-        <a class="dream" href="javascript:window.location.href='/page/register'" id="register"
+        <a class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register"
            style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                 style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
-        <a class="dream" href="javascript:window.location.href='/page/login'"
+        <a class="dream" href="javascript:window.location.href='/Movie/page/login'"
            style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                 style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
     </c:if>
     <c:if test="${sessionScope.user != null}">
 
-        <a class="dream" id="logout" href="javascript:window.location.href='/page/logout'"
+        <a class="dream" id="logout" href="javascript:window.location.href='/Movie/page/logout'"
            style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                 style="color: white" class="glyphicon glyphicon-log-in"></span> 退出</a>
-        <a class="dream" onclick='javascript:$.post("/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
+        <a class="dream" onclick='javascript:$.post("/Movie/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
                 if (data=="success") {
-                location.href = "/profile"
+                location.href = "/Movie/profile"
                 } else {
                 }
                 })'
@@ -162,7 +162,7 @@
                         <!--提交按钮，如果用户登录且未评分显示 -->
                         <c:if test="${sessionScope.user != null&&sessionScope.userstar==null}">
                             <button id="submitevalutionstar" class="btn btn-default btn-md"
-                                    onclick='$.post("/getstar",{userid:${sessionScope.user.userid},movieid:${sessionScope.moviedescription.movieid},time:getNowFormatDate(),star:$("#Evaluation").val()},function (data) {
+                                    onclick='$.post("/Movie/getstar",{userid:${sessionScope.user.userid},movieid:${sessionScope.moviedescription.movieid},time:getNowFormatDate(),star:$("#Evaluation").val()},function (data) {
                                             alert(data);window.location.href=window.location.href})'><span
                                     class="glyphicon glyphicon-ok-circle"></span><span class="fm-opt-label"> 提交</span>
                             </button>
@@ -418,7 +418,7 @@
     <td>
     <a value="{id}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>{moviename}</a></td>
@@ -505,7 +505,7 @@
    <div>
       <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>
