@@ -57,10 +57,10 @@
             return true;
         },
         doLogin:function() {
-            $.post("/login", $("#logForm_mod").serialize(),function(data){
+            $.post("/MovieManager/login", $("#logForm_mod").serialize(),function(data){
                 if (data.status == 200) {
                     alert("登录成功！");
-                    location.href="/movie";
+                    location.href="/MovieManager/movie";
                 } else {
                     alert("登录失败，原因是：" + data.msg);
                 }

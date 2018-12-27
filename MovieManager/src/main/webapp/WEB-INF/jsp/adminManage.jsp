@@ -325,7 +325,7 @@
                 }
             },
             addAdmin: function () {
-                $.post("/admin/add.action", $("#add_admin_form").serialize(), function (data) {
+                $.post("<%=basePath%>admin/add.action", $("#add_admin_form").serialize(), function (data) {
                     alert("管理员信息添加成功！");
                     window.location.reload();
                 });
@@ -363,7 +363,7 @@
                 }
             },
             updateAdmin: function () {
-                $.post("/admin/update.action", $("#edit_admin_form").serialize(), function (data) {
+                $.post("<%=basePath%>admin/update.action", $("#edit_admin_form").serialize(), function (data) {
                     alert("管理员信息更新成功！");
                     window.location.reload();
                 });
