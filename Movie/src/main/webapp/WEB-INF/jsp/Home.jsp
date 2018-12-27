@@ -11,35 +11,35 @@
 <html>
 <head>
     <title>
-        梦的6次方
+        RQEA - Your Personal & Professional Movie Reviewer
     </title>
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/Homediscovery.css" rel="stylesheet">
-    <link href="/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/Movie/assets/css/Homediscovery.css" rel="stylesheet">
+    <link href="/Movie/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%--导航栏--%>
 <nav class="navbar navbar-default" role="navigation" style="background-color: #222;margin-bottom: 0%">
-    <a class="navbar-brand" href="/" style="color: white">懂你<img src="/assets/img/title.gif">电影</a>
+    <a class="navbar-brand" href="/Movie/" style="color: white">RQ<img src="/Movie/assets/img/title.gif">EA</a>
 
     <div class="col-xs-4">
         <input id="inp-query" class="form-control" style="margin-bottom: 8px;margin-top: 8px;border-radius: 5px;" name="search_text"  maxlength="60" placeholder="搜索电影" value="">
     </div>
-    <a class="navbar-brand" href="/index" style="color: white">选电影</a>
+    <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
     <!-- 判断用户是否登录-->
     <c:if test="${sessionScope.user == null}">
-        <a  class="dream" href="javascript:window.location.href='/page/register'" id="register" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
-        <a  class="dream" href="javascript:window.location.href='/page/login'" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
+        <a  class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
+        <a  class="dream" href="javascript:window.location.href='/Movie/page/login'" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
     </c:if>
     <c:if test="${sessionScope.user != null}">
 
-        <a class="dream" id="logout" href="javascript:window.location.href='/page/logout'" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span>  退出</a>
-        <a class="dream" onclick='javascript:$.post("/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
+        <a class="dream" id="logout" href="javascript:window.location.href='/Movie/page/logout'" style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span>  退出</a>
+        <a class="dream" onclick='javascript:$.post("/Movie/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
                 if (data=="success") {
-                location.href = "/profile"
+                location.href = "/Movie/profile"
                 } else {
                 }
                 })' style=" text-decoration:none;float: right;color: white;font-size: 13pt;margin-top: 12px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> ${sessionScope.user.username}</a>
@@ -59,9 +59,9 @@
         <!-- 左侧电影信息卡片-->
         <div id="x-kankan-detail" class="x-kankan-detail">
             <p class="x-kankan-title">
-                <a name="movienametag" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+                <a name="movienametag" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })' class="q" data-toggle="tooltip" value="${sessionScope.TopDefaultMovie[0].movieid}" data-placement="top" data-original-title="点击查看${sessionScope.TopDefaultMovie[0].moviename}的详细资料">
@@ -69,7 +69,7 @@
                 </a>
                 <span class="revision-score">
                 <span class="fm-rating">
-        <a class="fm-green" value="${sessionScope.TopDefaultMovie[0].movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+        <a class="fm-green" value="${sessionScope.TopDefaultMovie[0].movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
                 location.href = "/MovieDescription"
             } else {
@@ -88,9 +88,9 @@
         <!-- 右侧按钮-->
         <div class="btn-group fm-discovery-actions">
             <!-- 搜索影片资源跳转详情页-->
-            <a name="moviedesc" data-placement="top" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+            <a name="moviedesc" data-placement="top" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'class="btn-default revision-btn-left "value="${sessionScope.TopDefaultMovie[0].movieid}" title="" data-toggle="tooltip" data-movie="the-other-guys" data-cat="watched" data-class="btn-success" data-original-title="搜索资源">
@@ -117,7 +117,7 @@
     <!-- 播放按钮-->
     <div class="xx-play-button">
         <a name="moviehref" href="http://so.iqiyi.com/so/q_${sessionScope.TopDefaultMovie[0].moviename}" target="_blank" class="q" data-title="全网资源搜索" style="display: none;">
-            <img src="/assets/img/Homeimg/kankan_play.7b61b6e9285d.png" alt="播放按钮">
+            <img src="/Movie/assets/img/Homeimg/kankan_play.7b61b6e9285d.png" alt="播放按钮">
         </a>
     </div>
 
@@ -340,7 +340,7 @@
         var searchText=$("#inp-query").val();
 
         $("#search-result").children().remove();
-        $.post("/search",{"search_text":searchText},function (data) {
+        $.post("/Movie/search",{"search_text":searchText},function (data) {
             if (data.status == 200) {
                 if(data.data.length!=0) {
                     $.each(data.data, function (i, item) {
@@ -375,9 +375,9 @@
 <script type="text/tmpl"  id="movie-tmpl">
  <li id="searchResult">
    <div>
-      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>

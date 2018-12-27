@@ -6,16 +6,16 @@
 
 <head>
     <meta charset="utf-8"/>
-    <title data-react-helmet="true">梦的6次方</title>
+    <title data-react-helmet="true">RQEA - Your Personal & Professional Movie Reviewer</title>
     <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
     <link data-react-helmet="true" rel="prefetch" href="/assets/img/user_cover_image.jpg"/>
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/star-rating.min.js" type="text/javascript"></script>
-    <link href="/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
-    <link href="/assets/css/douban.main.css" rel="stylesheet"/>
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
+    <script src="/Movie/assets/js/star-rating.min.js" type="text/javascript"></script>
+    <link href="/Movie/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="/Movie/assets/css/douban.main.css" rel="stylesheet"/>
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/Movie/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
     <style>
         .component-poster-detail .nav-tabs > li {
             width: 50% !important;
@@ -48,19 +48,19 @@
                        style="margin-bottom: 8px;margin-top: 8px;border-radius: 5px;" name="search_text" maxlength="60"
                        placeholder="搜索电影" value="">
             </div>
-            <a class="navbar-brand" href="/index" style="color: white">选电影</a>
+            <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
             <!-- 判断用户是否登录-->
             <c:if test="${sessionScope.user == null}">
-                <a class="dream" href="javascript:window.location.href='/page/register'" id="register"
+                <a class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register"
                    style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                         style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
-                <a class="dream" href="javascript:window.location.href='/page/login'"
+                <a class="dream" href="javascript:window.location.href='/Movie/page/login'"
                    style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                         style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
 
-                <a class="dream" id="logout" href="javascript:window.location.href='/page/logout'"
+                <a class="dream" id="logout" href="javascript:window.location.href='/Movie/page/logout'"
                    style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
                         style="color: white" class="glyphicon glyphicon-log-in"></span> 退出</a>
                 <a class="dream" href="javascript:"
@@ -81,9 +81,9 @@
                             <div data-reactid="65">
                                 <div class="UserCover" data-reactid="71">
                                     <!-- 背景图片 -->
-                                    <div class="VagueImage UserCover-image" data-src="/assets/img/user_cover_image.jpg"
+                                    <div class="VagueImage UserCover-image" data-src="/Movie/assets/img/user_cover_image.jpg"
                                          data-reactid="72">
-                                        <img src="/assets/img/user_cover_image.jpg">
+                                        <img src="/Movie/assets/img/user_cover_image.jpg">
                                         <div class="VagueImage-mask" data-reactid="73"></div>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                  data-reactid="77">
                                 <div class="UserAvatar" data-reactid="78">
                                     <img class="Avatar Avatar--large UserAvatar-inner" width="160" height="160"
-                                         src="/assets/img/user_avatar.jpg" srcset="/assets/img/user_avatar.jpg 2x"
+                                         src="/Movie/assets/img/user_avatar.jpg" srcset="/Movie/assets/img/user_avatar.jpg 2x"
                                          data-reactid="79"/>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                                             <td width="100" valign="top">
                                                                 <a class="nbg" value="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
                                                   if (data=="success") {
-                                                      location.href = "/MovieDescription"
+                                                      location.href = "/Movie/MovieDescription"
                                                   } else {
                                                   }
                                               })' title="${item.moviename}">
@@ -213,9 +213,9 @@
                                                             <td valign="top">
                                                                 <div class="pl2">
 
-                                                                    <a value="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+                                                                    <a value="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
                                                   if (data=="success") {
-                                                      location.href = "/MovieDescription"
+                                                      location.href = "/Movie/MovieDescription"
                                                   } else {
                                                   }
                                               })' class="">
@@ -266,9 +266,9 @@
                                                     <table width="100%" class="">
                                                         <tr class="item">
                                                             <td width="100" valign="top">
-                                                                <a class="nbg" value="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+                                                                <a class="nbg" value="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
                                                   if (data=="success") {
-                                                      location.href = "/MovieDescription"
+                                                      location.href = "/Movie/MovieDescription"
                                                   } else {
                                                   }
                                               })'>
@@ -315,9 +315,9 @@
                         <!-- 右侧电影推荐列表 -->
                         <c:if test="${sessionScope.TopDefaultMovie != null}">
                             <c:forEach var="item" items="${sessionScope.TopDefaultMovie}">
-                                <a class="Profile-lightItem" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+                                <a class="Profile-lightItem" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })' value="${item.movieid}"><span class="Profile-lightItemName" data-reactid="331">${item.moviename}</span><span
@@ -391,7 +391,7 @@
         var searchText = $("#inp-query").val();
 
         $("#search-result").children().remove();
-        $.post("/search", {"search_text": searchText}, function (data) {
+        $.post("/Movie/search", {"search_text": searchText}, function (data) {
             if (data.status == 200) {
                 if (data.data.length != 0) {
                     $.each(data.data, function (i, item) {
@@ -425,9 +425,9 @@
 <script type="text/tmpl" id="movie-tmpl">
  <li id="searchResult">
    <div>
-      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>
@@ -473,7 +473,7 @@
     function editUser(id) {
         $.ajax({
             type: "get",
-            url: "/user/edit.action",
+            url: "/Movie/user/edit.action",
             data: {"id": id},
             success: function (data) {   // Movie的JSON字符串传过来就行
 //                  $("#edit_userid").val(data.userid);
@@ -501,7 +501,7 @@
             return true;
         },
         updateUs: function () {
-            $.post("/user/update.action", {
+            $.post("/Movie/user/update.action", {
                 "userid": "${sessionScope.user.userid}",
                 "password": $("#edit_password").val(),
                 "email": $("#edit_email").val()

@@ -10,22 +10,22 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>
-        梦的6次方
+        RQEA - Your Personal & Professional Movie Reviewer
     </title>
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
     <!-- 电影推荐模块CSS-->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/wholeframe.css" rel="stylesheet" type="text/css">
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/Movie/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
+    <link href="/Movie/assets/css/wholeframe.css" rel="stylesheet" type="text/css">
     <!-- 左右模块位置排序和推荐CSS-->
-    <%--<link href="https://img3.doubanio.com/f/movie/8864d3756094f5272d3c93e30ee2e324665855b0/css/movie/base/init.css" rel="stylesheet">--%>
-    <link href="/assets/css/init.css" rel="stylesheet">
+    <%--<link href="https://img3.doubanio.com/f//Movie/8864d3756094f5272d3c93e30ee2e324665855b0/css//Movie/base/init.css" rel="stylesheet">--%>
+    <link href="/Movie/assets/css/init.css" rel="stylesheet">
 
     <!-- 电影选择模块CSS（类型/排序/展示）-->
-    <%--<link rel="stylesheet" href="https://img3.doubanio.com/f/movie/fc5a7b9631f6e089a6a047e0e701207243e3fbdf/css/movie/project/gaia/__init__.css" />--%>
-    <link rel="stylesheet" href="/assets/css/__init__.css" />
+    <%--<link rel="stylesheet" href="https://img3.doubanio.com/f//Movie/fc5a7b9631f6e089a6a047e0e701207243e3fbdf/css//Movie/project/gaia/__init__.css" />--%>
+    <link rel="stylesheet" href="/Movie/assets/css/__init__.css" />
 <!-- 电影推荐模块CSS-->
     <link rel="stylesheet" href="https://img3.doubanio.com/misc/mixed_static/554ab01e9256e005.css">
     <!-- 鼠标悬浮在<A>时背景和导航栏同步-->
@@ -100,23 +100,23 @@
 
 <!-- 导航栏-->
 <nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-    <a class="navbar-brand" href="/" style="color: white">懂你<img src="/assets/img/title.gif">电影</a>
+    <a class="navbar-brand" href="/Movie/" style="color: white">懂你<img src="/Movie/assets/img/title.gif">电影</a>
 
     <div class="col-xs-4">
     <input id="inp-query" class="form-control" style="margin-bottom: 8px;margin-top: 8px;border-radius: 5px;" name="search_text"  maxlength="60" placeholder="搜索电影" value="">
     </div>
-    <a class="navbar-brand" href="/index" style="color: white">选电影</a>
+    <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
     <!-- 判断用户是否登录-->
             <c:if test="${sessionScope.user == null}">
-            <a  class="dream" href="javascript:window.location.href='/page/register'" id="register" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
-            <a  class="dream" href="javascript:window.location.href='/page/login'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
+            <a  class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
+            <a  class="dream" href="javascript:window.location.href='/Movie/page/login'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
 
-                <a class="dream" id="logout" href="javascript:window.location.href='/page/logout'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span>  退出</a>
+                <a class="dream" id="logout" href="javascript:window.location.href='/Movie/page/logout'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span>  退出</a>
                 <a class="dream" onclick='javascript:$.post("/page/profile",{"id":"${sessionScope.user.userid}"}, function (data) {
             if (data=="success") {
-                location.href = "/profile"
+                location.href = "/Movie/profile"
             } else {
             }
         })' style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> ${sessionScope.user.username}</a>
@@ -189,7 +189,7 @@
 
                             <c:if test="${sessionScope.movie != null}">
                                 <c:forEach var="item"   items="${sessionScope.movie}">
-                                    <a class="item"   target="_blank" name="imgitem" id="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("id")}, function (data) {
+                                    <a class="item"   target="_blank" name="imgitem" id="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("id")}, function (data) {
                                     if (data == "success") {
                                         location.href = "/MovieDescription"
                                     } else {
@@ -257,7 +257,7 @@
                                     <c:forEach var="item"   items="${sessionScope.TopDefaultMovie}" varStatus="i">
                                         <c:if test="${i.count==1&&i.count<6}">
                                             <div class="item active">
-                                                <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("alt")}, function (data) {
+                                                <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("alt")}, function (data) {
                                                 if (data=="success") {
                                                     location.href = "/MovieDescription"
                                                 } else {
@@ -267,7 +267,7 @@
                                         </c:if>
                                         <c:if test="${i.count!=1&&i.count<6}">
                                             <div class="item">
-                                                <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("alt")}, function (data) {
+                                                <img src="${item.backpost}" alt="${item.movieid}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("alt")}, function (data) {
                                                 if (data=="success") {
                                                     location.href = "/MovieDescription"
                                                 } else {
@@ -319,7 +319,7 @@
 
 <script>
     $(document).on("click",'#loadmore',function() {
-        $.post("/loadingmore",{molimit:$("#list").children("a").length,type:$("label[class='activate']").attr("value"),sort: $("input[name='sort']:checked").val()},
+        $.post("/Movie/loadingmore",{molimit:$("#list").children("a").length,type:$("label[class='activate']").attr("value"),sort: $("input[name='sort']:checked").val()},
             function (data) {
             if (data.status == 200) {
                 if(data.data.length!=0) {
@@ -356,7 +356,7 @@
 
         <a class="item"  name="imgitem" target="_blank" id="{id}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("id")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>
@@ -485,7 +485,7 @@ function changeTwoDecimal_f(x)
    <div>
       <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
-                location.href = "/MovieDescription"
+                location.href = "/Movie/MovieDescription"
             } else {
             }
         })'>
@@ -586,7 +586,7 @@ function changeTwoDecimal_f(x)
         $("#list").children().remove();
         //如果type为0请求全部刷新页面
         //请求数据对应的电影类型
-        $.post("/typesortmovie", {
+        $.post("/Movie/typesortmovie", {
             molimit:$("#list").children("a").length,
             type: $(this).attr("value"),
             sort: $("input[name='sort']:checked").val()
@@ -624,7 +624,7 @@ function changeTwoDecimal_f(x)
     $("input[name='sort']").click(function () {
         $("#list").children().remove()
         //请求数据对应的电影类型
-        $.post("/typesortmovie", {
+        $.post("/Movie/typesortmovie", {
             molimit:$("#list").children("a").length,
             sort: $(this).attr("value"),
             type: $("label[class='activate']").attr("value")

@@ -6,21 +6,21 @@
 <html lang="zh-cmn-Hans" class="ua-mac ua-webkit">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>梦的6次方</title>
+    <title>RQEA - Your Personal & Professional Movie Reviewer</title>
 
     <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
 
     <!-- 星星评分CSS-->
-    <link href="/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="/Movie/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
     <!-- 整体DIV CSS-->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/wholeframe.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/MovieDescription.css" rel="stylesheet" type="text/css">
-    <link href="/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/Movie/assets/css/wholeframe.css" rel="stylesheet" type="text/css">
+    <link href="/Movie/assets/css/MovieDescription.css" rel="stylesheet" type="text/css">
+    <link href="/Movie/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
     <!-- JS-->
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
-    <script src="/assets/js/star-rating.min.js" type="text/javascript"></script>
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
+    <script src="/Movie/assets/js/star-rating.min.js" type="text/javascript"></script>
     <!-- 页面一开始加载star类和切换喜欢按钮样式-->
     <script type="text/javascript">
         function  load() {
@@ -323,9 +323,9 @@
 
 <!--底部 -->
 <div class="footer">
-    <a href="/" target="_blank">客户端</a>
-    <a href="/" target="_blank">关于我们</a>
-    <a href="/" target="_blank">加入我们</a>
+    <a href="/Movie" target="_blank">客户端</a>
+    <a href="/Movie" target="_blank">关于我们</a>
+    <a href="/Movie" target="_blank">加入我们</a>
     <div class="tip">Copyright © 2011-2018 &nbsp;&nbsp; <p>声明：本站不提供视频观看，将跳转到第三方网站进行观看</p></a>
         &nbsp;
     </div>
@@ -344,7 +344,7 @@
     $('#reviewsId').click(function (event) {
         event.preventDefault();
         $("#movietable").children().remove();
-        $.post("/getSimiMovies", {"id": "${sessionScope.moviedescription.movieid}"},function (data) {
+        $.post("/Movie/getSimiMovies", {"id": "${sessionScope.moviedescription.movieid}"},function (data) {
             if (data.status == 200) {
                 if(data.data.length!=0) {
                     $.each(data.data, function (i, item) {
@@ -375,7 +375,7 @@
             boollike=1;
         else
             boollike=0;
-        $.post("/likedmovie", {"movieid": "${sessionScope.moviedescription.movieid}","boollike":boollike,"userid":"${sessionScope.user.userid}"},function (data) {
+        $.post("/Movie/likedmovie", {"movieid": "${sessionScope.moviedescription.movieid}","boollike":boollike,"userid":"${sessionScope.user.userid}"},function (data) {
             if(data=="success") {
                 if (boollike == 1)
                     alert("收藏成功");
@@ -416,7 +416,7 @@
 <script type="text/tmpl" id="recommodmovies">
     <tr>
     <td>
-    <a value="{id}" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+    <a value="{id}" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
                 location.href = "/MovieDescription"
             } else {
@@ -468,7 +468,7 @@
         var searchText=$("#inp-query").val();
 
         $("#search-result").children().remove();
-        $.post("/search",{"search_text":searchText},function (data) {
+        $.post("/Movie/search",{"search_text":searchText},function (data) {
             if (data.status == 200) {
                 if(data.data.length!=0) {
                     $.each(data.data, function (i, item) {
@@ -503,7 +503,7 @@
 <script type="text/tmpl"  id="movie-tmpl">
  <li id="searchResult">
    <div>
-      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Customer/Description",{id:$(this).attr("value")}, function (data) {
+      <a value="{id}" style="text-decoration:none" onclick='javascript:$.post("/Movie/Customer/Description",{id:$(this).attr("value")}, function (data) {
             if (data=="success") {
                 location.href = "/MovieDescription"
             } else {

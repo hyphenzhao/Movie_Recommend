@@ -5,10 +5,10 @@
     <title>Login</title>
     <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
     <!-- CSS -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/regandlogcommon.css">
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Movie/assets/css/regandlogcommon.css">
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <![endif]-->
@@ -45,7 +45,7 @@
             return true;
         },
         doLogin: function () {
-            $.post("/customer/login", $("#logForm_mod").serialize(), function (data) {
+            $.post("/Movie/customer/login", $("#logForm_mod").serialize(), function (data) {
                 if (data.status == 200) {
                     alert("登录成功！");
                     location.href = "/"
@@ -68,7 +68,7 @@
 <script type="text/javascript">
     $('#register').click(function () {
 
-        location.href="/page/register"
+        location.href="/Movie/page/register"
     })
 </script>
 
@@ -80,9 +80,9 @@
     var timeInterval = 2000;
     //定义一个存放照片位置的数组，可以放任意个，在这里放3个
     var arr = new Array();
-    arr[0] = "/assets/img/loginimg/1.jpg";
-    arr[1] = "/assets/img/loginimg/2.jpg";
-    arr[2] = "/assets/img/loginimg/3.jpg";
+    arr[0] = "/Movie/assets/img/loginimg/1.jpg";
+    arr[1] = "/Movie/assets/img/loginimg/2.jpg";
+    arr[2] = "/Movie/assets/img/loginimg/3.jpg";
     setInterval(changeImg, timeInterval);
     function changeImg() {
         if (curIndex == arr.length - 1) {

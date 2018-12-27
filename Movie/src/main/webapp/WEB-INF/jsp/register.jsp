@@ -7,12 +7,12 @@
     <title>register</title>
     <link rel="SHORTCUT ICON" href="/assets/img/knowU.ico"/>
     <!-- CSS -->
-    <link href="/assets/css/bootstrap.css" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/regandlogcommon.css">
-    <link rel="stylesheet" href="/assets/css/register.css">
-    <script src="/assets/js/jquery.js"></script>
-    <script src="/assets/js/jquery.min.js"></script>
-    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/Movie/assets/css/regandlogcommon.css">
+    <link rel="stylesheet" href="/Movie/assets/css/register.css">
+    <script src="/Movie/assets/js/jquery.js"></script>
+    <script src="/Movie/assets/js/jquery.min.js"></script>
+    <script src="/Movie/assets/js/bootstrap.min.js"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <![endif]-->
@@ -174,7 +174,7 @@
            ids+=temp;
        }
        if(ids!="") {
-           $.post("/customer/register/movieSubmit", {'ids': ids}, function (data) {
+           $.post("/Movie/customer/register/movieSubmit", {'ids': ids}, function (data) {
                if(data=="ok") {
                    alert("提交成功");
                    $('#myModal').modal('hide');
@@ -250,7 +250,7 @@
 
         var username = encodeURI(encodeURI($("#regName").val()));
         console.log(username);
-        $.ajax({url:surl + "/customer/check/"+username+"/1?r=" + Math.random(),
+        $.ajax({url:surl + "/Movie/customer/check/"+username+"/1?r=" + Math.random(),
             success : function(data) {
                 if (data.data) {
                 } else {
@@ -374,7 +374,7 @@
 
         //判断邮箱是否被占用
         var surl = "";
-        $.ajax({url:surl + "/customer/check/"+escape($("#email").val())+"/3?r=" + Math.random(),
+        $.ajax({url:surl + "/Movie/customer/check/"+escape($("#email").val())+"/3?r=" + Math.random(),
             success : function(data) {
                 if (data.data) {
                 } else {
@@ -441,7 +441,7 @@
             var username = encodeURI(encodeURI($("#regName").val()));
             //检查用户和邮箱是否已经被占用
             $.ajax({
-                url : REGISTER.param.surl + "/customer/checkboth/"+username+"/"+escape($("#email").val())+"/4?=" + Math.random(),
+                url : REGISTER.param.surl + "/Movie/customer/checkboth/"+username+"/"+escape($("#email").val())+"/4?=" + Math.random(),
                 success : function(data) {
                     if (data.data) {
                         REGISTER.doSubmit();
@@ -455,7 +455,7 @@
 
         },
         doSubmit:function() {
-            $.post("/customer/register",$("#regForm_mod").serialize(), function(data){
+            $.post("/Movie/customer/register",$("#regForm_mod").serialize(), function(data){
                 if(data.status == 200){
                     alert('用户注册成功，请选择您喜欢的电影！');
 //                    REGISTER.login();
@@ -487,9 +487,9 @@
     var timeInterval = 2000;
     //定义一个存放照片位置的数组，可以放任意个，在这里放3个
     var arr = new Array();
-    arr[0] = "/assets/img/loginimg/1.jpg";
-    arr[1] = "/assets/img/loginimg/2.jpg";
-    arr[2] = "/assets/img/loginimg/3.jpg";
+    arr[0] = "/Movie/assets/img/loginimg/1.jpg";
+    arr[1] = "/Movie/assets/img/loginimg/2.jpg";
+    arr[2] = "/Movie/assets/img/loginimg/3.jpg";
     setInterval(changeImg, timeInterval);
     function changeImg() {
         if (curIndex == arr.length - 1) {
