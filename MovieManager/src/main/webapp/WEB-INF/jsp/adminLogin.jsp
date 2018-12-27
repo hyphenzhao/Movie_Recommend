@@ -5,18 +5,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="../../assets/css/style-login.css" rel="stylesheet" type="text/css"/>
-    <link href="../../assets/css/bootstrap.css" rel="stylesheet">
+    <link href="/MovieManager/assets/css/style-login.css" rel="stylesheet" type="text/css"/>
+    <link href="/MovieManager/assets/css/bootstrap.css" rel="stylesheet">
     <!--external css-->
 
     <!-- Custom styles for this template -->
-    <link href="../../assets/css/style.css" rel="stylesheet">
-    <script src="../../assets/js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="../../assets/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
-    <script src="../../assets/js/star-rating.min.js" type="text/javascript"></script>
-    <script src="../../assets/js/jquery.js" type="text/javascript"></script>
+    <link href="/MovieManager/assets/css/style.css" rel="stylesheet">
+    <script src="/MovieManager/assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/MovieManager/assets/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+    <script src="/MovieManager/assets/js/star-rating.min.js" type="text/javascript"></script>
+    <script src="/MovieManager/assets/js/jquery.js" type="text/javascript"></script>
 
-    <title>梦的6次方</title>
+    <title>RQEA - Your Personal & Professional Movie Reviewer</title>
 </head>
 <body>
 

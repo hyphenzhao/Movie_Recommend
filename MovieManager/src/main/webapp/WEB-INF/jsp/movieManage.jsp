@@ -8,7 +8,7 @@
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+			+ path + "/MovieManager/";
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,26 +19,26 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>梦的6次方</title>
+<title>RQEA - Your Personal & Professional Movie Reviewer</title>
 
 <!-- Bootstrap Core CSS -->
-<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="/MovieManager/assets/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- MetisMenu CSS -->
-<link href="../../assets/css/metisMenu.min.css" rel="stylesheet">
+<link href="/MovieManager/assets/css/metisMenu.min.css" rel="stylesheet">
 
 <!-- DataTables CSS -->
-<link href="../../assets/css/dataTables.bootstrap.css" rel="stylesheet">
+<link href="/MovieManager/assets/css/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Custom CSS -->
-<link href="../../assets/css/sb-admin-2.css" rel="stylesheet">
+<link href="/MovieManager/assets/css/sb-admin-2.css" rel="stylesheet">
 
 <!-- Custom Fonts -->
-<link href="../../assets/css/font-awesome.min.css" rel="stylesheet"
+<link href="/MovieManager/assets/css/font-awesome.min.css" rel="stylesheet"
 	type="text/css">
-<link href="../../assets/css/boot-crm.css" rel="stylesheet"
+<link href="/MovieManager/assets/css/boot-crm.css" rel="stylesheet"
 	type="text/css">
-<link href="../../assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
+<link href="/MovieManager/assets/css/bootstrap-datetimepicker.min.css" rel="stylesheet"
 	  type="text/css">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
