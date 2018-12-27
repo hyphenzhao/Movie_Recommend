@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
     <title>register</title>
-    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/index.png"/>
     <!-- CSS -->
     <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/Movie/assets/css/regandlogcommon.css">
@@ -21,7 +21,7 @@
 
 <body>
 <div class="page-container">
-    <h1 style="color: white">请填写注册信息</h1>
+    <h1 style="color: white">请填写注册/register信息</h1>
     <form id="regForm_mod">
         <%--用户名--%>
         <div id="d1">
@@ -56,7 +56,7 @@
 
         </div>
 
-        <button  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal #identifier" type="button" style="background-color: #00b4ef" onclick="REGISTER.reg()">注册</button>
+        <button  class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal #identifier" type="button" style="background-color: #00b4ef" onclick="REGISTER.reg()">注册/register</button>
             <%--邮箱提示信息--%>
 
          <ul class="bRadius2 mail">
@@ -191,7 +191,7 @@
 
 </script>
 
-<!-- 注册事件-->
+<!-- 注册/register事件-->
 
 <script type="text/javascript">
 
@@ -255,7 +255,7 @@
                 if (data.data) {
                 } else {
                     $(".usernameerror").show();
-                    $(".usernameerror").html("<span>▲用户已被注册，请重新输入</span>");
+                    $(".usernameerror").html("<span>▲用户已被注册/register，请重新输入</span>");
                     $("#regName").addClass("errorC");
 //                    style = 'position: relative ;top:-20px;left: 200px;'
                 }
@@ -379,7 +379,7 @@
                 if (data.data) {
                 } else {
                     $(".emailerror").show();
-                    $(".emailerror").html("<span>▲邮箱已被注册，请重新输入</span>");
+                    $(".emailerror").html("<span>▲邮箱已被注册/register，请重新输入</span>");
                     $("#email").addClass("errorC");
 //                    style = 'position: relative ;left: 290px;'
                 }
@@ -446,7 +446,7 @@
                     if (data.data) {
                         REGISTER.doSubmit();
                     } else {
-                        alert("用户名或者邮箱已被注册");
+                        alert("用户名或者邮箱已被注册/register");
                         $('#identifier').modal('hide');
 
                     }
@@ -457,12 +457,12 @@
         doSubmit:function() {
             $.post("/Movie/customer/register",$("#regForm_mod").serialize(), function(data){
                 if(data.status == 200){
-                    alert('用户注册成功，请选择您喜欢的电影！');
+                    alert('用户注册/register成功，请选择您喜欢的电影！');
 //                    REGISTER.login();
                     $('#myModal').modal('show');
 
                 } else {
-                    alert("注册失败！");
+                    alert("注册/register失败！");
                     $('#identifier').modal('hide');
                 }
             });

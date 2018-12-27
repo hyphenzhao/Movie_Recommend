@@ -81,7 +81,7 @@
                 </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="/MovieManager/logout"><i class="fa fa-sign-out fa-fw"></i>
-                            退出登录</a></li>
+                            退出登录/login</a></li>
                     </ul> <!-- /.dropdown-user --></li>
                 <!-- /.dropdown -->
             </ul>

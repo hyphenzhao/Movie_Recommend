@@ -14,7 +14,7 @@
     </title>
     <script src="/Movie/assets/js/jquery.js"></script>
     <script src="/Movie/assets/js/bootstrap.min.js"></script>
-    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/index.png"/>
     <!-- 电影推荐模块CSS-->
     <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
     <link href="/Movie/assets/css/SuggestList.css" rel="stylesheet" type="text/css">
@@ -99,17 +99,17 @@
 <body>
 
 <!-- 导航栏-->
-<nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-    <a class="navbar-brand" href="/Movie/" style="color: white">RQ<img src="/Movie/assets/img/title.gif">EA</a>
+<nav class="navbar navbar-default" role="navigation" style="background-color: orange;margin-bottom: 0%">
+    <a class="navbar-brand" href="/Movie/" style="color: grey">RQ<img src="/Movie/assets/img/index.png">EA</a>
 
     <div class="col-xs-4">
     <input id="inp-query" class="form-control" style="margin-bottom: 8px;margin-top: 8px;border-radius: 5px;" name="search_text"  maxlength="60" placeholder="搜索电影" value="">
     </div>
     <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
-    <!-- 判断用户是否登录-->
+    <!-- 判断用户是否登录/login-->
             <c:if test="${sessionScope.user == null}">
-            <a  class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
-            <a  class="dream" href="javascript:window.location.href='/Movie/page/login'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
+            <a  class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-user"></span> 注册/register</a>
+            <a  class="dream" href="javascript:window.location.href='/Movie/page/login'" style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span style="color: white" class="glyphicon glyphicon-log-in"></span> 登录/login</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
 

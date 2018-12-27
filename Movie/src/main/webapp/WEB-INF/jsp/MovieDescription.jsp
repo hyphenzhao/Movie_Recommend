@@ -8,7 +8,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>RQEA - Your Personal & Professional Movie Reviewer</title>
 
-    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/index.png"/>
 
     <!-- 星星评分CSS-->
     <link href="/Movie/assets/css/star-rating.css" media="all" rel="stylesheet" type="text/css"/>
@@ -46,8 +46,8 @@
 <body onload="load()">
 
 <!-- 导航栏-->
-<nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-    <a class="navbar-brand" href="/Movie" style="color: white">RQ<img src="/Movie/assets/img/title.gif">EA</a>
+<nav class="navbar navbar-default" role="navigation" style="background-color: orange;margin-bottom: 0%">
+    <a class="navbar-brand" href="/Movie" style="color: grey">RQ<img src="/Movie/assets/img/index.png">EA</a>
 
     <div class="col-xs-4">
         <input id="inp-query" class="form-control"
@@ -58,10 +58,10 @@
     <c:if test="${sessionScope.user == null}">
         <a class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register"
            style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
-                style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
+                style="color: white" class="glyphicon glyphicon-user"></span> 注册/register</a>
         <a class="dream" href="javascript:window.location.href='/Movie/page/login'"
            style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
-                style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
+                style="color: white" class="glyphicon glyphicon-log-in"></span> 登录/login</a>
     </c:if>
     <c:if test="${sessionScope.user != null}">
 
@@ -106,7 +106,7 @@
                             <!--电影图片 -->
                             <a><img src="${sessionScope.moviedescription.picture}" alt="" style="width: 100%"></a>
 
-                            <!--评分控件，如果用户登录且未评分显示 -->
+                            <!--评分控件，如果用户登录/login且未评分显示 -->
                             <c:if test="${sessionScope.user != null&&sessionScope.userstar==null}">
                                 <div id="evalutiondiv">
                                     <input id="Evaluation">
@@ -134,7 +134,7 @@
                                 style="font-size: 9pt">${sessionScope.moviedescription.averating}分</span></div>
                         <div><input id="allstar" value="${sessionScope.moviedescription.averating}"></div>
 
-                        <!--用户评分，如果用户登录且评分过则显示评分信息 -->
+                        <!--用户评分，如果用户登录/login且评分过则显示评分信息 -->
                         <c:if test="${sessionScope.user != null&&sessionScope.userstar!=null}">
                             <div><b style="font-size: 11pt">你的评分:</b> <span
                                     style="font-size: 9pt">${sessionScope.userstar.star}分</span></div>
@@ -145,7 +145,7 @@
                         </c:if>
                         <br>
 
-                        <!--喜欢按钮，如果用户登录则显示 -->
+                        <!--喜欢按钮，如果用户登录/login则显示 -->
                         <c:if test="${sessionScope.user != null}">
                         <a  class="btn btn-default btn-md" id="liked" onclick="likedclick()" ><span
                                 class="glyphicon glyphicon-heart"></span><span class="fm-opt-label"> 喜欢</span></a>
@@ -159,7 +159,7 @@
                                 class="fm-opt-label"> 播放</span></a><br>
                         <br>
 
-                        <!--提交按钮，如果用户登录且未评分显示 -->
+                        <!--提交按钮，如果用户登录/login且未评分显示 -->
                         <c:if test="${sessionScope.user != null&&sessionScope.userstar==null}">
                             <button id="submitevalutionstar" class="btn btn-default btn-md"
                                     onclick='$.post("/Movie/getstar",{userid:${sessionScope.user.userid},movieid:${sessionScope.moviedescription.movieid},time:getNowFormatDate(),star:$("#Evaluation").val()},function (data) {

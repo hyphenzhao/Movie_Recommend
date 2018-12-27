@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8"/>
     <title data-react-helmet="true">RQEA - Your Personal & Professional Movie Reviewer</title>
-    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/index.png"/>
     <link data-react-helmet="true" rel="prefetch" href="/Movie/assets/img/user_cover_image.jpg"/>
     <script src="/Movie/assets/js/jquery.js"></script>
     <script src="/Movie/assets/js/bootstrap.min.js"></script>
@@ -40,8 +40,8 @@
 
     <div data-reactid="5">
         <!-- 导航栏-->
-        <nav class="navbar navbar-default" role="navigation" style="background-color: black;margin-bottom: 0%">
-            <a class="navbar-brand" href="/Movie" style="color: white">电影推荐网站</a>
+        <nav class="navbar navbar-default" role="navigation" style="background-color: orange;margin-bottom: 0%">
+            <a class="navbar-brand" href="/Movie" style="color: grey">电影推荐网站</a>
 
             <div class="col-xs-4">
                 <input id="inp-query" class="form-control"
@@ -49,14 +49,14 @@
                        placeholder="搜索电影" value="">
             </div>
             <a class="navbar-brand" href="/Movie/index" style="color: white">选电影</a>
-            <!-- 判断用户是否登录-->
+            <!-- 判断用户是否登录/login-->
             <c:if test="${sessionScope.user == null}">
                 <a class="dream" href="javascript:window.location.href='/Movie/page/register'" id="register"
                    style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
-                        style="color: white" class="glyphicon glyphicon-user"></span> 注册</a>
+                        style="color: white" class="glyphicon glyphicon-user"></span> 注册/register</a>
                 <a class="dream" href="javascript:window.location.href='/Movie/page/login'"
                    style="float: right;color: white;font-size: 13pt;margin-top: 10px;margin-right: 10px"><span
-                        style="color: white" class="glyphicon glyphicon-log-in"></span> 登录</a>
+                        style="color: white" class="glyphicon glyphicon-log-in"></span> 登录/login</a>
             </c:if>
             <c:if test="${sessionScope.user != null}">
 

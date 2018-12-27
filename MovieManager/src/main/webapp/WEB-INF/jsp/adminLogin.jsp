@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-offset-3 col-md-6">
             <form class="form-horizontal" id="logForm_mod">
-                <span class="heading">管理员登录</span>
+                <span class="heading">管理员登录/login</span>
                 <div class="form-group">
                     <input type="text" class="form-control" id="loginAdminname" placeholder="账号" name="adminname">
                     <i class="fa fa-user"></i>
@@ -35,7 +35,7 @@
                     <a href="#" class="fa fa-question-circle"></a>
                 </div>
                 <div class="form-group">
-                    <button  id="login" type="button" class="btn btn-default" onclick="ADMINLOGIN.login()">登录</button>
+                    <button  id="login" type="button" class="btn btn-default" onclick="ADMINLOGIN.login()">登录/login</button>
                 </div>
             </form>
         </div>
@@ -59,10 +59,10 @@
         doLogin:function() {
             $.post("/MovieManager/login", $("#logForm_mod").serialize(),function(data){
                 if (data.status == 200) {
-                    alert("登录成功！");
+                    alert("登录/login成功！");
                     location.href="/MovieManager/movie";
                 } else {
-                    alert("登录失败，原因是：" + data.msg);
+                    alert("登录/login失败，原因是：" + data.msg);
                 }
             });
         },

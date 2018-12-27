@@ -81,7 +81,7 @@
                 </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="/logout"><i class="fa fa-sign-out fa-fw"></i>
-                            退出登录</a></li>
+                            退出登录/login</a></li>
                     </ul> <!-- /.dropdown-user --></li>
                 <!-- /.dropdown -->
             </ul>
@@ -135,8 +135,8 @@
                                     <th>用户Id</th>
                                     <th>用户名</th>
                                     <th>邮箱</th>
-                                    <th>注册时间</th>
-                                    <th>上次登录时间</th>
+                                    <th>注册/register时间</th>
+                                    <th>上次登录/login时间</th>
                                 </tr>
                             </thead>
                             <tbody align="center">
@@ -203,14 +203,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="edit_registertime" class="col-sm-2 control-label">注册时间</label>
+                            <label for="edit_registertime" class="col-sm-2 control-label">注册/register时间</label>
                             <div class="col-sm-10">
                                 <input class="form_datetime" value="" type="text" id="edit_registertime" name="registertime">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="edit_lastlogintime" class="col-sm-2 control-label">登录时间</label>
+                            <label for="edit_lastlogintime" class="col-sm-2 control-label">登录/login时间</label>
                             <div class="col-sm-10">
                                 <input class="form_datetime" value="" type="text" id="edit_lastlogintime" name="lastlogintime">
                             </div>
@@ -262,14 +262,14 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="add_registertime" class="col-sm-2 control-label">注册时间</label>
+                            <label for="add_registertime" class="col-sm-2 control-label">注册/register时间</label>
                             <div class="col-sm-10">
                                 <input class="form_datetime" value="" type="text" id="add_registertime" name="registertime">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="add_lastlogintime" class="col-sm-2 control-label">登录时间</label>
+                            <label for="add_lastlogintime" class="col-sm-2 control-label">登录/login时间</label>
                             <div class="col-sm-10">
                                 <input class="form_datetime" value="" type="text" id="add_lastlogintime" name="lastlogintime">
                             </div>
@@ -368,11 +368,11 @@
                     return false;
                 }
                 if(!$("#add_registertime").val()) {
-                    alert("请输入用户注册时间！");
+                    alert("请输入用户注册/register时间！");
                     return false;
                 }
                 if(!$("#add_lastlogintime").val()) {
-                    alert("请输入用户上次登录时间！");
+                    alert("请输入用户上次登录/login时间！");
                     return false;
                 }
                 return true;
@@ -415,11 +415,11 @@
                     return false;
                 }
                 if(!$("#edit_registertime").val()) {
-                    alert("请输入用户注册时间！");
+                    alert("请输入用户注册/register时间！");
                     return false;
                 }
                 if(!$("#edit_lastlogintime").val()) {
-                    alert("请输入用户上次登录时间！");
+                    alert("请输入用户上次登录/login时间！");
                     return false;
                 }
                 return true;

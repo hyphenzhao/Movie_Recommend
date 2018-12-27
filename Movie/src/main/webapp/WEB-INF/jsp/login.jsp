@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <link rel="SHORTCUT ICON" href="/Movie/assets/img/knowU.ico"/>
+    <link rel="SHORTCUT ICON" href="/Movie/assets/img/index.png"/>
     <!-- CSS -->
     <link href="/Movie/assets/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" href="/Movie/assets/css/regandlogcommon.css">
@@ -23,19 +23,19 @@
         <input type="text" name="username" id="loginUsername" placeholder="用户名" required="required">
         <span style="color: white" class="glyphicon glyphicon-asterisk"></span>
         <input type="password" name="password" id="loginPassword" placeholder="密　码" required="required">
-        <button type="button" id="login" onclick="LOGIN.login()">登录</button>
-        <button type="button" id="register" style="background-color: #00b4ef">注册</button>
+        <button type="button" id="login" onclick="LOGIN.login()">登录/login</button>
+        <button type="button" id="register" style="background-color: #00b4ef">注册/register</button>
     </form>
 </div>
 
-<!-- 登录按钮事件-->
+<!-- 登录/login按钮事件-->
 
 <script type="text/javascript">
     var LOGIN = {
         checkInput: function () {
 
             if (!$("#loginUsername").val()) {
-                alert("请输入登录名！");
+                alert("请输入登录/login名！");
                 return false;
             }
             if ($("#loginUsername").val() && !$("#loginPassword").val()) {
@@ -47,10 +47,10 @@
         doLogin: function () {
             $.post("/Movie/customer/login", $("#logForm_mod").serialize(), function (data) {
                 if (data.status == 200) {
-                    alert("登录成功！");
+                    alert("登录/login成功！");
                     location.href = "/Movie/"
                 } else {
-                    alert("登录失败，原因是：" + data.msg);
+                    alert("登录/login失败，原因是：" + data.msg);
                 }
             });
         },
@@ -63,7 +63,7 @@
     };
 </script>
 
-<!-- 注册按钮事件-->
+<!-- 注册/register按钮事件-->
 
 <script type="text/javascript">
     $('#register').click(function () {
